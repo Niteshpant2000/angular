@@ -1,0 +1,29 @@
+<div class="container-fluid" id="banner" [ngStyle]="{'background-image':'url('+cafe.banner+')'}">
+    <h2 id="heading" style="font-size:40px">{{cafe.name}}</h2>
+</div>
+<div class="container-fluid" id="main">
+    <div class="container">
+
+        <div class="container-fluid" id="description">
+            
+            <div class="row">
+                <div class="col">
+                    <h4 style="text-align: center;">Description</h4>
+                    <p>{{cafe.description}}</p>
+                </div>
+                <div class="col"></div>
+            </div>
+            
+            <h4 >Cost per Person</h4>
+            <p style="padding-left:30px">₹{{cafe.avg_cost}}/ Person</p>
+        </div>
+        <div class="container-fluid" id="menu">
+            <h4>MENU</h4>
+            <div class="grid-container">
+                <div class="grid-item" *ngFor="let x of cafe.menu">
+                    <img [src]="x" height="150px" width="150px" id="menupage">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

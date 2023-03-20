@@ -1,0 +1,40 @@
+#banner{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    height:350px;
+    
+    
+}
+#description{
+    padding-top:30px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+.grid-container{
+    display:inline-grid;
+    grid-template-columns: 200px 200px 200px;
+    row-gap: 50px;
+   
+}
+h2,h4{
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-weight: bold;
+    color:rgb(143, 134, 204);
+    padding:10px;
+}
+#main{
+    background-image: url(../../assets/background-image-cafe.png);
+    background-size:contain;
+
+    background-repeat:no-repeat;
+    background-position-x: right;
+    background-position-y:30px;
+    
+    background-color: #f5beb4;
+    background-blend-mode: normal; 
+}
+#menupage:hover{
+    transform:scale(5);
+}

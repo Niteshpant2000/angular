@@ -1,0 +1,59 @@
+#banner{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    background-image:url(../../assets/banner.webp);
+    background-size:cover;
+    height:250px;
+}
+h2{
+    padding-top:20px;
+}
+
+#heading{
+    padding-top:20px;
+    background-color: #ffffff;
+}
+.row{
+    padding-bottom:30px;
+}
+.card{
+    height:400px;
+    width:400px;
+}
+.card-img-top{
+    height:200px;
+    
+}
+#cardcarousel{
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    width:100vw;
+    
+}
+#cardcarousel2{
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+   
+  
+}
+#buttonprev{
+    size:30px;
+}
+h2,h5,a,p{
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    
+}
+h2,h5{
+    color:#500472;
+}
+
+#heading2{
+       
+        background-color:#c6d7eb;
+}

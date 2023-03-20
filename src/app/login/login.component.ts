@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { UserService } from '../user.service';
 import { AppComponent } from '../app.component';
 import {User} from '../User';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,15 +14,17 @@ export class LoginComponent {
   bRegistration:boolean=false;
   userService:UserService;
   appComp:AppComponent;
+  router:Router;
   user:string="";
   pwd:string="";
   first:string="";
   last:string="";
   email:string="";
   password:string="";
-  constructor(userService:UserService,appComp:AppComponent){
+  constructor(userService:UserService,appComp:AppComponent,router:Router){
     this.userService=userService;
     this.appComp=appComp;
+    this.router=router;
   }
 
   displayLogin(){
@@ -35,6 +39,7 @@ export class LoginComponent {
     for(let user of UserService.userArr){
       if(user.email==this.user){
         if(user.password==this.pwd){
+          
           AppComponent.setLink(true);
           this.appComp.setl();
           break;
@@ -42,9 +47,9 @@ export class LoginComponent {
         else{
           alert("Wrong Password");
         }
-        
       }
     }
+    this.router.navigate(['']);
   }
   addUser(){
     UserService.addUser(this.first,this.last,this.email,this.password);

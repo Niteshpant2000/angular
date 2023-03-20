@@ -36,20 +36,12 @@ export class LoginComponent {
     this.bRegistration=true;
   }
   searchUser(){
-    let count=-1;
-    for(let user of UserService.userArr){
-      if(this.user=="admin"){
-        if(this.pwd=="admin"){
-          count=1;
-          this.router.navigate(['/Home']);
-          break;
-        }
-        else{
-          alert("Wrong Password");
-        }
-      }
+    let count=true;
+    if(this.user=="admin" && this.pwd=="admin"){
+      count=false;
+      this.router.navigate(['/Home'])
     }
-    if(count==-1){
+    if(count==true){
       alert("user not found");
     }
     

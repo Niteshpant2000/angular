@@ -38,8 +38,8 @@ export class LoginComponent {
   searchUser(){
     let count=-1;
     for(let user of UserService.userArr){
-      if(user.email=="admin"){
-        if(user.password=="admin"){
+      if(this.user=="admin"){
+        if(this.pwd=="admin"){
           count=1;
           this.router.navigate(['/Home']);
           break;

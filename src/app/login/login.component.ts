@@ -49,7 +49,7 @@ export class LoginComponent {
         }
       }
     }
-    if(count=-1){
+    if(count==-1){
       alert("user not found");
     }
     

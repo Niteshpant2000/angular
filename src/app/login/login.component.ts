@@ -49,7 +49,7 @@ export class LoginComponent {
         }
       }
     }
-    this.router.navigate(['']);
+    this.router.navigate(['/Home']);
   }
   addUser(){
     UserService.addUser(this.first,this.last,this.email,this.password);

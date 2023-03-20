@@ -9,7 +9,7 @@ import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
 
 const routes: Routes = [
   {path:"",component:LoginComponent},
-  {path:"/Home",component:HomeComponent},
+  {path:"Home",component:HomeComponent},
   {path:"About",component:AboutUSComponent},
   {path:"Contact",component:ContactUSComponent},
   {path:"Login",component:LoginComponent},

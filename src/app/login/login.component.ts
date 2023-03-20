@@ -36,12 +36,12 @@ export class LoginComponent {
     this.bRegistration=true;
   }
   searchUser(){
+    let count=-1;
     for(let user of UserService.userArr){
-      if(user.email==this.user){
-        if(user.password==this.pwd){
-          
-          AppComponent.setLink(true);
-          this.appComp.setl();
+      if(user.email=="admin"){
+        if(user.password=="admin"){
+          count=1;
+          this.router.navigate(['/Home']);
           break;
         }
         else{
@@ -49,7 +49,10 @@ export class LoginComponent {
         }
       }
     }
-    this.router.navigate(['/Home']);
+    if(count=-1){
+      alert("user not found");
+    }
+    
   }
   addUser(){
     UserService.addUser(this.first,this.last,this.email,this.password);

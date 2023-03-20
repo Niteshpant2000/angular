@@ -7,7 +7,7 @@ import { UserService } from './user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Gaming';
+  title = 'CB';
   static linkEnabled:boolean=false;
   link:boolean=true;
   static setLink(bool:boolean){
@@ -16,8 +16,4 @@ export class AppComponent {
   setl(){
     this.link=AppComponent.linkEnabled;
   }
-  
-
-
-
 }

@@ -12,7 +12,11 @@ h2{
 
 #heading{
     padding-top:20px;
-    background-color: #ffffff;
+    background-color:#c6d7eb;
+    background-image: url(../../assets/drink.avif);
+    background-size: contain;
+    height:100vh;
+    z-index: -1;
 }
 .row{
     padding-bottom:30px;
@@ -30,8 +34,9 @@ h2{
     display:flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
+    
     width:100vw;
+    
     
 }
 #cardcarousel2{
@@ -46,14 +51,199 @@ h2{
     size:30px;
 }
 h2,h5,a,p{
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family:monospace;
+    
     
 }
 h2,h5{
-    color:#500472;
+    color:rgb(6, 12, 12);
+    font-weight:bolder;
+
 }
 
 #heading2{
        
-        background-color:#c6d7eb;
+        background-image: url(../../assets/res.jpg);
+        background-size: contain;
 }
+/*body{
+    
+    width:100%;
+    height:100%;
+}
+#carouselExampleControls{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size:40px;
+    text-align:center;  
+}
+.card:hover {
+    transform: scale(1.1);
+}
+.card {
+    transition: transform 0.5s;
+
+}
+.card-img-top{
+    height:300px;
+}
+#carouselImage{
+  height:600px;
+}
+.places{
+  background-color:#EDC7B7;
+  padding:20px;
+
+}
+.exercises{
+  background-color:#EEE2DC;
+  padding:20px;
+
+
+}*/
+#subtitle {
+    text-align:center;
+    padding-left:420px;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid rgb(0, 0, 0); /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(0, 0, 0); }
+  }
+
+#textoverimage{
+  
+    position:absolute;
+    padding:100px;
+}
+
+.col .card{
+    margin:20px;
+   
+    border-radius: 40px;
+    height: 250px;
+    overflow:scroll;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  
+    transition: 0.3s ease-in-out;
+}
+/*.card {
+    height: 220px;
+    max-width: 200px;
+    position: relative;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    background: wheat;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 202px black;
+    transition: 0.3s ease-in-out;
+}*/
+.col .card:hover {
+    height: auto;
+}
+
+.col .card .card-body {
+    position: relative;
+    margin-top: -100px;
+    padding: 10px 15px;
+    text-align: center;
+    color: #353030;
+   
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+
+}
+#carousel{
+    margin-top: 20px;
+}
+.col .card:hover .card-body {
+    visibility: visible;
+    opacity: 1;
+    margin-top: -10px;
+    transition-delay: 0.3s;
+}
+#link{
+    text-decoration:none;
+   
+    color:black;
+}
+.col .card::-webkit-scrollbar {
+    display: none;
+  }
+.col .card .card-img-top{
+    border-top-left-radius: 40px;
+    border-top-right-radius:40px;
+    height: 100%;
+}
+.carouselExampleIndicators{
+    margin:30px;
+}
+.card-group .card:hover {
+    transform: scale(1.1);
+  }
+.card-group .card{
+    margin:20px;
+    border-radius: 40px;
+    transition: transform 0.5s;
+}
+#banner2{
+    height: 100vh;
+    background-color: aliceblue;
+    
+}
+#bannerContent2{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#bannercol2{
+    display:flex;
+    padding:60px;
+    margin-top:60px;
+    padding-top: 100px;  
+}
+#first{
+    text-align:left;
+    margin-top: 20px;
+}
+#first1{
+    text-align:center;
+    
+}
+
+#yogaretreats{
+    background-color: beige;
+
+}
+.card-body{
+    background-color:aliceblue;
+}
+.bg-white{
+    margin-top:140px;
+}
+
+

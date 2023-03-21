@@ -13,6 +13,7 @@ export class HomeComponent {
   }
   setID(id:number){
     this.cafeservice.setSomething(id);
+    
   }
 
 }

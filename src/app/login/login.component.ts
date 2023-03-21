@@ -1,7 +1,4 @@
-import { Component } from '@angular/core';
-import { UserService } from '../user.service';
-import { AppComponent } from '../app.component';
-import {User} from '../User';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,45 +6,69 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
-  bLogin:boolean=true;
-  bRegistration:boolean=false;
-  userService:UserService;
-  appComp:AppComponent;
-  router:Router;
-  user:string="";
-  pwd:string="";
-  first:string="";
-  last:string="";
-  email:string="";
-  password:string="";
-  constructor(userService:UserService,appComp:AppComponent,router:Router){
-    this.userService=userService;
-    this.appComp=appComp;
-    this.router=router;
+export class LoginComponent implements OnInit{
+
+  // check if login form is active or not
+  loginActive = true;
+
+  // check if registeration form is active or not
+  registerationActive = false;
+  
+  // to activate login form
+  displayLoginForm(){
+    this.loginActive = true;
+    this.registerationActive = false;
   }
 
-  displayLogin(){
-    this.bLogin=true;
-    this.bRegistration=false;
+  // to activate registeration form
+  displayRegisterationForm(){
+    this.loginActive = false;
+    this.registerationActive = true;
   }
-  displayRegistration(){
-    this.bLogin=false;
-    this.bRegistration=true;
-  }
-  searchUser(){
-    let count=true;
-    if(this.user=="admin" && this.pwd=="admin"){
-      count=false;
-      this.router.navigate(['/Home'])
+
+  // LOGIN
+  signUpUsers: any[] = [
+    {username: "admin", password: "admin"}
+  ]; 
+
+  signUpObj: any = {
+    username: '', 
+    password: ''
+  };
+
+  loginObj: any = {
+    username: '', 
+    password: ''
+  };
+
+  constructor(private router: Router){}
+
+  ngOnInit(): void{
+    const localData = localStorage.getItem('signUpUsers');
+    if(localData != null){
+      this.signUpUsers = JSON.parse(localData);
     }
-    if(count==true){
-      alert("user not found");
-    }
-    
   }
-  addUser(){
-    UserService.addUser(this.first,this.last,this.email,this.password);
-    this.bLogin=true;
+
+  onSignUp(){
+    this.signUpUsers.push(this.signUpObj);
+    localStorage.setItem('signUpUsers', JSON.stringify(this.signUpUsers));
+    this.signUpObj = {
+      username: '', 
+      password: ''
+    };
+    alert("ADDED USER");
+  }
+
+  user: string = "";
+  pass: string = "";
+  onLogin(){
+    const isUserExist = this.signUpUsers.find(m => m.username == this.user && m.password == this.pass);
+    if(isUserExist != undefined){
+      this.router.navigate(['/Home']);
+    }
+    else{
+      alert("NOT A VALID USER");
+    }
   }
 }
